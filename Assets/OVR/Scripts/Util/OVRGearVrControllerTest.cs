@@ -85,6 +85,7 @@ public class OVRGearVrControllerTest : MonoBehaviour
 	}
 
 	public Text uiText;
+	public Transform trackingSpace;
 	private List<BoolMonitor> monitors;
 	private StringBuilder data;
 
@@ -183,6 +184,9 @@ public class OVRGearVrControllerTest : MonoBehaviour
 
 		Vector3 pos = OVRInput.GetLocalControllerPosition(activeController);
 		data.AppendFormat("Position: ({0:F2}, {1:F2}, {2:F2})\n", pos.x, pos.y, pos.z);
+
+		pos = trackingSpace.localToWorldMatrix.MultiplyPoint(pos);
+		data.AppendFormat("Global position: ({0:F2}, {1:F2}, {2:F2})\n", pos.x, pos.y, pos.z);
 
 		Vector3 vel = OVRInput.GetLocalControllerVelocity(activeController);
 		data.AppendFormat("Vel: ({0:F2}, {1:F2}, {2:F2})\n", vel.x, vel.y, vel.z);
