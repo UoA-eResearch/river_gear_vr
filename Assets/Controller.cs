@@ -10,11 +10,11 @@ public class Controller : MonoBehaviour {
 	void Update()
 	{
 		var y = Input.GetAxis("Mouse Y");
-		if (y > .1)
+		if (y > .1 && transform.localScale.magnitude < 1000f)
 		{
 			transform.localScale *= 1.1f;
 		}
-		else if (y < -.1)
+		else if (y < -.1 && transform.localScale.magnitude > .1f)
 		{
 			transform.localScale *= .9f;
 		}
