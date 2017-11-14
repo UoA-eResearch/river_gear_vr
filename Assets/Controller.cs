@@ -9,14 +9,22 @@ public class Controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
+		var x = Input.GetAxis("Mouse X");
 		var y = Input.GetAxis("Mouse Y");
-		if (y > .1 && transform.localScale.magnitude < 1000f)
+		if (x > .1 && transform.localScale.magnitude < 1000f)
 		{
 			transform.localScale *= 1.1f;
-		}
-		else if (y < -.1 && transform.localScale.magnitude > .1f)
+		} else if (x < -.1 && transform.localScale.magnitude > .1f)
 		{
 			transform.localScale *= .9f;
+		}
+		if (y > .1)
+		{
+			transform.position += Vector3.up;
+		}
+		else if (y < -.1)
+		{
+			transform.position -= Vector3.up;
 		}
 
 		if (Input.GetButtonDown("Fire1"))
@@ -51,7 +59,7 @@ public class Controller : MonoBehaviour {
 				if (Input.GetButtonUp("Fire1"))
 				{
 					Debug.Log("Hit " + hit.collider.name);
-					transform.position = hit.point + Vector3.up;
+					transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
 				}
 			}
 			laser.SetPosition(0, start);
