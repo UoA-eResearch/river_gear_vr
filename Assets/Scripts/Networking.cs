@@ -18,6 +18,7 @@ public class Networking : MonoBehaviour {
 	string deviceId;
 	public GameObject playerPrefab;
 	public Dictionary<string, WireData> currentData;
+	public Transform head;
 
 	[Serializable]
 	public class WireData
@@ -51,8 +52,8 @@ public class Networking : MonoBehaviour {
 	void BroadcastPosition()
 	{
 		MemoryStream ms = new MemoryStream();
-		var p = transform.position;
-		var r = transform.rotation.eulerAngles;
+		var p = head.position;
+		var r = head.rotation.eulerAngles;
 		var wd = new WireData(p.x, p.y, p.z, r.x, r.y, r.z, deviceId);
 		bf.Serialize(ms, wd);
 		var bytes = ms.ToArray();
