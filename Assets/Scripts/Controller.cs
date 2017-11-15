@@ -18,11 +18,11 @@ public class Controller : MonoBehaviour {
 		{
 			transform.localScale *= .9f;
 		}
-		if (y > .1)
+		if (y > .1 && y < 100)
 		{
 			transform.position += Vector3.up;
 		}
-		else if (y < -.1)
+		else if (y < -.1 && y > -10)
 		{
 			transform.position -= Vector3.up;
 		}

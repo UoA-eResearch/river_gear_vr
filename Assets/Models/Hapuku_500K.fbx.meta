@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 30fdc91dc5175ee42b3566f0917403fa
+timeCreated: 1510785845
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: HapukuModel_1M_MeshPart0
+    100004: HapukuModel_1M_MeshPart1
+    100006: HapukuModel_1M_MeshPart10
+    100008: HapukuModel_1M_MeshPart11
+    100010: HapukuModel_1M_MeshPart12
+    100012: HapukuModel_1M_MeshPart13
+    100014: HapukuModel_1M_MeshPart14
+    100016: HapukuModel_1M_MeshPart15
+    100018: HapukuModel_1M_MeshPart16
+    100020: HapukuModel_1M_MeshPart17
+    100022: HapukuModel_1M_MeshPart18
+    100024: HapukuModel_1M_MeshPart2
+    100026: HapukuModel_1M_MeshPart3
+    100028: HapukuModel_1M_MeshPart4
+    100030: HapukuModel_1M_MeshPart5
+    100032: HapukuModel_1M_MeshPart6
+    100034: HapukuModel_1M_MeshPart7
+    100036: HapukuModel_1M_MeshPart8
+    100038: HapukuModel_1M_MeshPart9
+    400000: //RootNode
+    400002: HapukuModel_1M_MeshPart0
+    400004: HapukuModel_1M_MeshPart1
+    400006: HapukuModel_1M_MeshPart10
+    400008: HapukuModel_1M_MeshPart11
+    400010: HapukuModel_1M_MeshPart12
+    400012: HapukuModel_1M_MeshPart13
+    400014: HapukuModel_1M_MeshPart14
+    400016: HapukuModel_1M_MeshPart15
+    400018: HapukuModel_1M_MeshPart16
+    400020: HapukuModel_1M_MeshPart17
+    400022: HapukuModel_1M_MeshPart18
+    400024: HapukuModel_1M_MeshPart2
+    400026: HapukuModel_1M_MeshPart3
+    400028: HapukuModel_1M_MeshPart4
+    400030: HapukuModel_1M_MeshPart5
+    400032: HapukuModel_1M_MeshPart6
+    400034: HapukuModel_1M_MeshPart7
+    400036: HapukuModel_1M_MeshPart8
+    400038: HapukuModel_1M_MeshPart9
+    2300000: HapukuModel_1M_MeshPart0
+    2300002: HapukuModel_1M_MeshPart1
+    2300004: HapukuModel_1M_MeshPart10
+    2300006: HapukuModel_1M_MeshPart11
+    2300008: HapukuModel_1M_MeshPart12
+    2300010: HapukuModel_1M_MeshPart13
+    2300012: HapukuModel_1M_MeshPart14
+    2300014: HapukuModel_1M_MeshPart15
+    2300016: HapukuModel_1M_MeshPart16
+    2300018: HapukuModel_1M_MeshPart17
+    2300020: HapukuModel_1M_MeshPart18
+    2300022: HapukuModel_1M_MeshPart2
+    2300024: HapukuModel_1M_MeshPart3
+    2300026: HapukuModel_1M_MeshPart4
+    2300028: HapukuModel_1M_MeshPart5
+    2300030: HapukuModel_1M_MeshPart6
+    2300032: HapukuModel_1M_MeshPart7
+    2300034: HapukuModel_1M_MeshPart8
+    2300036: HapukuModel_1M_MeshPart9
+    3300000: HapukuModel_1M_MeshPart0
+    3300002: HapukuModel_1M_MeshPart1
+    3300004: HapukuModel_1M_MeshPart10
+    3300006: HapukuModel_1M_MeshPart11
+    3300008: HapukuModel_1M_MeshPart12
+    3300010: HapukuModel_1M_MeshPart13
+    3300012: HapukuModel_1M_MeshPart14
+    3300014: HapukuModel_1M_MeshPart15
+    3300016: HapukuModel_1M_MeshPart16
+    3300018: HapukuModel_1M_MeshPart17
+    3300020: HapukuModel_1M_MeshPart18
+    3300022: HapukuModel_1M_MeshPart2
+    3300024: HapukuModel_1M_MeshPart3
+    3300026: HapukuModel_1M_MeshPart4
+    3300028: HapukuModel_1M_MeshPart5
+    3300030: HapukuModel_1M_MeshPart6
+    3300032: HapukuModel_1M_MeshPart7
+    3300034: HapukuModel_1M_MeshPart8
+    3300036: HapukuModel_1M_MeshPart9
+    4300000: HapukuModel_1M_MeshPart0
+    4300002: HapukuModel_1M_MeshPart1
+    4300004: HapukuModel_1M_MeshPart2
+    4300006: HapukuModel_1M_MeshPart3
+    4300008: HapukuModel_1M_MeshPart4
+    4300010: HapukuModel_1M_MeshPart5
+    4300012: HapukuModel_1M_MeshPart6
+    4300014: HapukuModel_1M_MeshPart7
+    4300016: HapukuModel_1M_MeshPart8
+    4300018: HapukuModel_1M_MeshPart9
+    4300020: HapukuModel_1M_MeshPart10
+    4300022: HapukuModel_1M_MeshPart11
+    4300024: HapukuModel_1M_MeshPart12
+    4300026: HapukuModel_1M_MeshPart13
+    4300028: HapukuModel_1M_MeshPart14
+    4300030: HapukuModel_1M_MeshPart15
+    4300032: HapukuModel_1M_MeshPart16
+    4300034: HapukuModel_1M_MeshPart17
+    4300036: HapukuModel_1M_MeshPart18
+    6400000: HapukuModel_1M_MeshPart0
+    6400002: HapukuModel_1M_MeshPart1
+    6400004: HapukuModel_1M_MeshPart10
+    6400006: HapukuModel_1M_MeshPart11
+    6400008: HapukuModel_1M_MeshPart12
+    6400010: HapukuModel_1M_MeshPart13
+    6400012: HapukuModel_1M_MeshPart14
+    6400014: HapukuModel_1M_MeshPart15
+    6400016: HapukuModel_1M_MeshPart16
+    6400018: HapukuModel_1M_MeshPart17
+    6400020: HapukuModel_1M_MeshPart18
+    6400022: HapukuModel_1M_MeshPart2
+    6400024: HapukuModel_1M_MeshPart3
+    6400026: HapukuModel_1M_MeshPart4
+    6400028: HapukuModel_1M_MeshPart5
+    6400030: HapukuModel_1M_MeshPart6
+    6400032: HapukuModel_1M_MeshPart7
+    6400034: HapukuModel_1M_MeshPart8
+    6400036: HapukuModel_1M_MeshPart9
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
