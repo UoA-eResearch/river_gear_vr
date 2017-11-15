@@ -17,6 +17,8 @@ ModelImporter:
     3300002: TeKumi_Slide_1M_MeshPart1
     4300000: TeKumi_Slide_1M_MeshPart0
     4300002: TeKumi_Slide_1M_MeshPart1
+    6400000: TeKumi_Slide_1M_MeshPart0
+    6400002: TeKumi_Slide_1M_MeshPart1
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,7 +48,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
