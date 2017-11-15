@@ -401,8 +401,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 9001
-  ignoreSelf: 0
-  playerPrefab: {fileID: 0}
+  ignoreSelf: 1
+  playerPrefab: {fileID: 1483742438887892, guid: 3dac0f69eb76745418e69a30819b0c06,
+    type: 2}
 --- !u!1 &272459114
 GameObject:
   m_ObjectHideFlags: 0

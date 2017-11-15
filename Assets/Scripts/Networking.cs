@@ -17,6 +17,7 @@ public class Networking : MonoBehaviour {
 	public bool ignoreSelf = true;
 	string deviceId;
 	public GameObject playerPrefab;
+	public Dictionary<string, WireData> currentData;
 
 	[Serializable]
 	public class WireData
@@ -40,6 +41,7 @@ public class Networking : MonoBehaviour {
 		udp = new UdpClient(port);
 		broadcastIp = new IPEndPoint(IPAddress.Broadcast, port);
 		deviceId = SystemInfo.deviceUniqueIdentifier;
+		currentData = new Dictionary<string, WireData>();
 		InvokeRepeating("BroadcastPosition", 0f, 0.1f);
 		Debug.Log("Listening on " + port);
 		udp.EnableBroadcast = true;
@@ -68,18 +70,29 @@ public class Networking : MonoBehaviour {
 		byte[] buffer = socket.EndReceive(result, ref source);
 		var ms = new MemoryStream(buffer);
 		WireData wd = (WireData)bf.Deserialize(ms);
-		if (wd.id != deviceId || !ignoreSelf)
-		{
-			var p = new Vector3(wd.x, wd.y, wd.z);
-			var r = new Vector3(wd.u, wd.v, wd.z);
-			Debug.Log(wd.id + " is at " + p + " with rotation " + r);
-		}
+		currentData[wd.id] = wd;
 		// schedule the next receive operation once reading is done:
 		socket.BeginReceive(new AsyncCallback(OnUdpData), socket);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		foreach(var kv in currentData)
+		{
+			if (kv.Key != deviceId || !ignoreSelf)
+			{
+				var o = GameObject.Find(kv.Key);
+				if (o == null)
+				{
+					o = Instantiate(playerPrefab);
+					o.name = kv.Key;
+				}
+				var wd = kv.Value;
+				var p = new Vector3(wd.x, wd.y, wd.z);
+				var r = new Vector3(wd.u, wd.v, wd.w);
+				o.transform.position = p;
+				o.transform.rotation = Quaternion.Euler(r);
+			}
+		}
 	}
 }
