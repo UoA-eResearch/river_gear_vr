@@ -16,6 +16,7 @@ public class Networking : MonoBehaviour {
 	BinaryFormatter bf = new BinaryFormatter();
 	public bool ignoreSelf = true;
 	string deviceId;
+	public GameObject playerPrefab;
 
 	[Serializable]
 	public class WireData
