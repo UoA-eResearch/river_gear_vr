@@ -40,15 +40,15 @@ public class Controller : MonoBehaviour {
 			{
 				var orientation = OVRInput.GetLocalControllerRotation(controller);
 				var localStartPoint = OVRInput.GetLocalControllerPosition(controller);
-				var localEndPoint = localStartPoint + ((orientation * Vector3.forward) * 500.0f);
+				var localEndPoint = localStartPoint + ((orientation * Vector3.forward) * 50000.0f);
 				Matrix4x4 localToWorld = trackingSpace.localToWorldMatrix;
 				start = localToWorld.MultiplyPoint(localStartPoint);
 				end = localToWorld.MultiplyPoint(localEndPoint);
 			}
 			else
 			{
-				start = head.position - Vector3.up * transform.localScale.magnitude * .02f;
-				end = start + head.forward * 500f;
+				start = head.position - Vector3.up * transform.localScale.magnitude * .1f;
+				end = start + head.forward * 50000f;
 			}
 
 			// Create new ray
