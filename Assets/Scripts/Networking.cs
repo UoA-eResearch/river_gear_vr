@@ -82,7 +82,16 @@ public class Networking : MonoBehaviour {
 		// schedule the next receive operation once reading is done:
 		socket.BeginReceive(new AsyncCallback(OnUdpData), socket);
 	}
-	
+
+	public Color ColorFromId(string id)
+	{
+		var hash = id.GetHashCode();
+		int r = hash & 0xff;
+		int g = (hash & 0xff00) >> 8;
+		int b = (hash & 0xff0000) >> 16;
+		return new Color(r / 255f, g / 255f, b / 255f);
+	}
+
 	// Update is called once per frame
 	void Update () {
 		foreach(var kv in currentData)
@@ -94,6 +103,7 @@ public class Networking : MonoBehaviour {
 				{
 					o = Instantiate(playerPrefab);
 					o.name = kv.Key;
+					o.GetComponentInChildren<Renderer>().material.SetColor("_EmissionColor", ColorFromId(kv.Key));
 				}
 				var wd = kv.Value;
 				var p = new Vector3(wd.x, wd.y, wd.z);
