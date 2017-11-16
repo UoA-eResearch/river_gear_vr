@@ -47,8 +47,8 @@ public class Controller : MonoBehaviour {
 			}
 			else
 			{
-				start = head.position - Vector3.up * .1f;
-				end = head.forward * 500;
+				start = head.position - Vector3.up * transform.localScale.magnitude * .02f;
+				end = start + head.forward * 500f;
 			}
 
 			// Create new ray
@@ -64,7 +64,7 @@ public class Controller : MonoBehaviour {
 			}
 			laser.SetPosition(0, start);
 			laser.SetPosition(1, end);
-			//laser.widthMultiplier = 1 / transform.localScale.magnitude * .02f;
+			laser.widthMultiplier = transform.localScale.magnitude * .02f;
 		}
 		if (Input.GetButtonUp("Fire1"))
 		{
