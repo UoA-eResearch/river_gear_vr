@@ -6,8 +6,16 @@ public class Controller : MonoBehaviour {
 	public LineRenderer laser;
 	public Transform trackingSpace;
 	public Transform head;
-	// Update is called once per frame
-	void Update()
+
+    private AudioSource teleportAudio;
+    
+    private void Start()
+    {
+        teleportAudio = GetComponent<AudioSource>();
+    }
+
+    // Update is called once per frame
+    void Update()
 	{
 		var x = Input.GetAxis("Mouse X");
 		var y = Input.GetAxis("Mouse Y");
@@ -60,6 +68,7 @@ public class Controller : MonoBehaviour {
 				{
 					Debug.Log("Hit " + hit.collider.name);
 					transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+                    teleportAudio.Play();
 				}
 			}
 			laser.SetPosition(0, start);
