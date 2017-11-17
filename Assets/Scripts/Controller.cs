@@ -22,7 +22,7 @@ public class Controller : MonoBehaviour {
 		if (x > .1 && transform.localScale.magnitude < 1000f)
 		{
 			transform.localScale *= 1.1f;
-		} else if (x < -.1 && transform.localScale.magnitude > .1f)
+		} else if (x < -.1 && transform.localScale.magnitude > 1f)
 		{
 			transform.localScale *= .9f;
 		}
