@@ -18,14 +18,17 @@ public class Networking : MonoBehaviour {
 	string deviceId;
 	public GameObject playerPrefab;
 	public Dictionary<string, WireData> currentData;
+	public Transform trackingSpace;
 	public Transform head;
-
+	public LineRenderer laser;
+	
 	[Serializable]
 	public class WireData
 	{
-		public float x, y, z, u, v, w;
+		public float x, y, z, u, v, w, cx, cy, cz, cu, cv, cw;
+		public bool isTeleporting, isTeleportingFromHead;
 		public string id;
-		public WireData(float x, float y, float z, float u, float v, float w, string id)
+		public WireData(float x, float y, float z, float u, float v, float w, string id, float cx, float cy, float cz, float cu, float cv, float cw, bool isTeleporting, bool isTeleportingFromHead)
 		{
 			this.x = x;
 			this.y = y;
@@ -34,6 +37,14 @@ public class Networking : MonoBehaviour {
 			this.v = v;
 			this.w = w;
 			this.id = id;
+			this.cx = cx;
+			this.cy = cy;
+			this.cz = cz;
+			this.cu = cu;
+			this.cv = cv;
+			this.cw = cw;
+			this.isTeleporting = isTeleporting;
+			this.isTeleportingFromHead = isTeleportingFromHead;
 		}
 	}
 
@@ -54,7 +65,16 @@ public class Networking : MonoBehaviour {
 		MemoryStream ms = new MemoryStream();
 		var p = head.position;
 		var r = head.rotation.eulerAngles;
-		var wd = new WireData(p.x, p.y, p.z, r.x, r.y, r.z, deviceId);
+
+		var cp = Vector3.zero;
+		var cr = Vector3.zero;
+		OVRInput.Controller controller = OVRInput.GetConnectedControllers() & (OVRInput.Controller.LTrackedRemote | OVRInput.Controller.RTrackedRemote);
+		if (controller != OVRInput.Controller.None)
+		{
+			cp = trackingSpace.localToWorldMatrix.MultiplyPoint(OVRInput.GetLocalControllerPosition(controller));
+			cr = OVRInput.GetLocalControllerRotation(controller).eulerAngles;
+		}
+		var wd = new WireData(p.x, p.y, p.z, r.x, r.y, r.z, deviceId, cp.x, cp.y, cp.z, cr.x, cr.y, cr.z, laser.enabled, laser.name == "head");
 		bf.Serialize(ms, wd);
 		var bytes = ms.ToArray();
 		udp.Send(bytes, bytes.Length, broadcastIp);
@@ -110,6 +130,25 @@ public class Networking : MonoBehaviour {
 				var r = new Vector3(wd.u, wd.v, wd.w);
 				o.transform.position = p;
 				o.transform.rotation = Quaternion.Euler(r);
+				var controller = o.transform.Find("GearVrController");
+				var cp = new Vector3(wd.cx, wd.cy, wd.cz);
+				var cr = new Vector3(wd.cu, wd.cv, wd.cw);
+				controller.gameObject.SetActive(cp != Vector3.zero);
+				controller.position = cp;
+				controller.rotation = Quaternion.Euler(cr);
+				var l = o.GetComponent<LineRenderer>();
+				l.enabled = wd.isTeleporting;
+				if (wd.isTeleporting) {
+					if (wd.isTeleportingFromHead)
+					{
+						l.SetPosition(0, o.transform.position);
+						l.SetPosition(1, o.transform.position + o.transform.forward * 50000);
+					} else
+					{
+						l.SetPosition(0, controller.position);
+						l.SetPosition(1, controller.position + controller.rotation * Vector3.forward * 50000);
+					}
+				}
 			}
 		}
 	}

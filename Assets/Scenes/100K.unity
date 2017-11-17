@@ -683,7 +683,9 @@ MonoBehaviour:
   ignoreSelf: 1
   playerPrefab: {fileID: 1483742438887892, guid: 3dac0f69eb76745418e69a30819b0c06,
     type: 2}
+  trackingSpace: {fileID: 234671318}
   head: {fileID: 234671317}
+  laser: {fileID: 234671316}
 --- !u!82 &234671320
 AudioSource:
   m_ObjectHideFlags: 0

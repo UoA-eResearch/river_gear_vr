@@ -52,11 +52,13 @@ public class Controller : MonoBehaviour {
 				Matrix4x4 localToWorld = trackingSpace.localToWorldMatrix;
 				start = localToWorld.MultiplyPoint(localStartPoint);
 				end = localToWorld.MultiplyPoint(localEndPoint);
+				laser.name = "controller";
 			}
 			else
 			{
 				start = head.position - Vector3.up * transform.localScale.magnitude * .1f;
 				end = start + head.forward * 50000f;
+				laser.name = "head";
 			}
 
 			// Create new ray
