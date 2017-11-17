@@ -133,8 +133,7 @@ public class Networking : MonoBehaviour {
 				var controller = o.transform.Find("GearVrController");
 				var cp = new Vector3(wd.cx, wd.cy, wd.cz);
 				var cr = new Vector3(wd.cu, wd.cv, wd.cw);
-				controller.gameObject.SetActive(cp != Vector3.zero);
-				controller.position = cp;
+				// controller.position = cp;
 				controller.rotation = Quaternion.Euler(cr);
 				var l = o.GetComponent<LineRenderer>();
 				l.enabled = wd.isTeleporting;
